@@ -72,7 +72,6 @@
                     <% out.println(contact.getPhone()); %>
                 </td>
                 <td>
-<%--                    <input name="contactId" value="<%=contact.getId()%>">--%>
                     <button class='btn btn-primary' type='submit' name="delete_button" value="<%=contact.getId()%>">Удалить</button>
                 </td>
             </tr>
