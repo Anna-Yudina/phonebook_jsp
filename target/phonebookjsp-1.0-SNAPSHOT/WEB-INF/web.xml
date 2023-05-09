@@ -17,13 +17,8 @@
     </servlet>
 
     <servlet>
-        <servlet-name>DeletedContactServlet</servlet-name>
-        <servlet-class>ru.academits.servlet.DeletedContactServlet</servlet-class>
-    </servlet>
-
-    <servlet>
-        <servlet-name>DeleteCheckedServlet</servlet-name>
-        <servlet-class>ru.academits.servlet.DeleteCheckedServlet</servlet-class>
+        <servlet-name>DeleteContactServlet</servlet-name>
+        <servlet-class>ru.academits.servlet.DeleteContactServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -37,13 +32,8 @@
     </servlet-mapping>
 
     <servlet-mapping>
-        <servlet-name>DeletedContactServlet</servlet-name>
+        <servlet-name>DeleteContactServlet</servlet-name>
         <url-pattern>/delete</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>DeleteCheckedServlet</servlet-name>
-        <url-pattern>/deleteChecked</url-pattern>
     </servlet-mapping>
 
 </web-app>

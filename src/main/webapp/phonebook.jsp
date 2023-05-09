@@ -32,7 +32,7 @@
     </div>
 
 
-    <form action="deleteChecked" method="POST">
+    <form action="delete" method="POST">
         <table class="table table-bordered contact-table">
             <thead>
             <tr>
@@ -49,7 +49,7 @@
             </tr>
             </thead>
             <tbody>
-            <%  int number = 0;
+            <% int number = 0;
                 for (Contact contact : contactList) {
                     number++;
             %>
@@ -72,16 +72,13 @@
                     <% out.println(contact.getPhone()); %>
                 </td>
                 <td>
-                    <form action="delete" method="POST">
-                        <input style="display: none" name="contactId" value="<%=contact.getId()%>">
-                        <input class='btn btn-primary' type='submit' value="Удалить">
-                    </form>
+                    <button class='btn btn-primary' type='submit' name="delete_button" value="<%=contact.getId()%>">Удалить</button>
                 </td>
             </tr>
             <%}%>
             </tbody>
         </table>
-        <input type="submit" class="btn btn-primary" value="Удалить выбранные">
+        <button type="submit" class="btn btn-primary" name="delete_checked_button">Удалить выбранные</button>
     </form>
 
     <br>
@@ -99,7 +96,7 @@
             <label class="form-label">
                 <span class="form-field">Фамилия:</span>
                 <input type="text" class="ml-1 form-control input-sm form-input" name="lastName"
-                       value='<%=currentContact.getLastName() == null ? "" : currentContact.getLastName() %>' />
+                       value='<%=currentContact.getLastName() == null ? "" : currentContact.getLastName() %>'/>
                 <span class="error-message">
                      <c:if test="${not empty contactValidation.lastNameError}">
                          <c:out value="${contactValidation.lastNameError}">
@@ -112,7 +109,7 @@
             <label class="form-label">
                 <span class="form-field">Имя:</span>
                 <input type="text" class="ml-1 form-control input-sm form-input" name="firstName"
-                       value='<%=currentContact.getFirstName() == null ? "" : currentContact.getFirstName() %>' />
+                       value='<%=currentContact.getFirstName() == null ? "" : currentContact.getFirstName() %>'/>
                 <span class="error-message">
                     <c:if test="${not empty contactValidation.firstNameError}">
                         <c:out value="${contactValidation.firstNameError}">
@@ -125,7 +122,7 @@
             <label class="form-label">
                 <span class="form-field">Телефон:</span>
                 <input type="number" class="ml-1 form-control input-sm form-input" name="phone"
-                       value='<%=currentContact.getPhone() == null ? "" : currentContact.getPhone() %>' />
+                       value='<%=currentContact.getPhone() == null ? "" : currentContact.getPhone() %>'/>
                 <span class="error-message">
                      <c:if test="${not empty contactValidation.phoneError}">
                          <c:out value="${contactValidation.phoneError}">
